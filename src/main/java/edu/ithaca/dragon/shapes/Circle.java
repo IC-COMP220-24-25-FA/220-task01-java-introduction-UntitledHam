@@ -21,7 +21,7 @@ public class Circle {
      * @post doubles the size of this circle
      */
     public void doubleSize(){
-        radius = radius * 2;
+        radius *= (double)Math.sqrt(2);
     }
 
     /**
