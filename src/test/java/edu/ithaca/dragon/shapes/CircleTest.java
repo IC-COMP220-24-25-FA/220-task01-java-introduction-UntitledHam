@@ -42,6 +42,10 @@ public class CircleTest {
 
     }
 
+    public void testDoubleSize() {
+        
+    }
+
     @Test
     public void TestConstructorError(){
         assertThrows(IllegalArgumentException.class, () -> new Circle(0));
