@@ -1,22 +1,26 @@
 package edu.ithaca.dragon.shapes;
 
 public class Rectangle {
+    private double length;
+    private double width; 
     
 
     public Rectangle(double length, double width){
-        throw new RuntimeException("Not implemented yet");
+        this.length = length;
+        this.width = width;
     }
 
     public double calcArea(){
-       throw new RuntimeException("Not implemented yet");
+        return width * length; 
     }
 
     public void doubleSize(){
-        throw new RuntimeException("Not implemented yet");
+        width *= (double) Math.sqrt(2);
+        length *= (double) Math.sqrt(2);
     }
 
     public double longestLineWithin(){
-        throw new RuntimeException("Not implemented yet");
+        return Math.sqrt(Math.pow(length, 2) + Math.pow(width, 2));
     }
     
 }
