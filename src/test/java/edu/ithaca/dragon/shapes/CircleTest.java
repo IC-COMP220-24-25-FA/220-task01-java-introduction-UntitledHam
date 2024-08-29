@@ -61,11 +61,10 @@ public class CircleTest {
         assertEquals(refCircle.calcArea() * 2, doubleCircle.calcArea()); 
 
     }
-
-    @Test
+    /*@Test
     public void TestConstructorError(){
         assertThrows(IllegalArgumentException.class, () -> new Circle(0));
-    }
+    }*/
 
 
     

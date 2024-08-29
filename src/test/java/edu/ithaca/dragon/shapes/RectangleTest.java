@@ -28,4 +28,30 @@ public class RectangleTest {
         assertEquals(myRectangle.longestLineWithin(), Math.sqrt(2504));
 
     }
+
+    @Test 
+    public void TestDoubleSize() {
+        Rectangle refRectangle = new Rectangle(1,1);
+        Rectangle doubleRectangle = new Rectangle(1, 1);
+        doubleRectangle.doubleSize();
+
+        assertEquals(refRectangle.calcArea() * 2, doubleRectangle.calcArea(), 0.005);
+
+        refRectangle = new Rectangle(5,4);
+        doubleRectangle = new Rectangle(5,4);
+        doubleRectangle.doubleSize();
+
+        assertEquals(refRectangle.calcArea() * 2, doubleRectangle.calcArea(), 0.005);
+        
+        refRectangle = new Rectangle(10,5);
+        doubleRectangle = new Rectangle(10, 5);
+        doubleRectangle.doubleSize();
+
+        assertEquals(refRectangle.calcArea() * 2, doubleRectangle.calcArea(), 0.005);
+
+
+
+
+
+    }
 }
