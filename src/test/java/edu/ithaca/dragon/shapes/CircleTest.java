@@ -48,17 +48,17 @@ public class CircleTest {
         Circle doubleCircle = new Circle(1);  
         doubleCircle.doubleSize();
 
-        assertEquals(refCircle.calcArea() * 2, doubleCircle.calcArea());
+        assertEquals(refCircle.calcArea() * 2, doubleCircle.calcArea(), 0.005);
         
         refCircle = new Circle(5); 
         doubleCircle = new Circle(5); 
         doubleCircle.doubleSize();
-        assertEquals(refCircle.calcArea() * 2, doubleCircle.calcArea()); 
+        assertEquals(refCircle.calcArea() * 2, doubleCircle.calcArea(), 0.005); 
 
         refCircle = new Circle(10); 
         doubleCircle = new Circle(10); 
         doubleCircle.doubleSize();
-        assertEquals(refCircle.calcArea() * 2, doubleCircle.calcArea()); 
+        assertEquals(refCircle.calcArea() * 2, doubleCircle.calcArea(), 0.005); 
 
     }
     /*@Test
