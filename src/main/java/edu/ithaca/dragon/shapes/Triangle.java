@@ -3,8 +3,8 @@ import java.util.Arrays;
 
 public class Triangle {
     private double[] sides; 
-    public Triangle(double[] sidesIn){
-        sides = sidesIn; 
+    public Triangle(double side0, double side1, double side2){
+        sides = new double[] {side0, side1, side2}; 
     }
 
     public double calcArea() {
@@ -22,5 +22,13 @@ public class Triangle {
         double[] sides_copy = sides.clone();
         Arrays.sort(sides_copy); 
         return sides_copy[2]; 
+    }
+
+    public double calcHeight() {
+        return 2 * (calcArea()/sides[0]); 
+    }
+
+    public double[] getSides() {
+        return sides; 
     }
 }
