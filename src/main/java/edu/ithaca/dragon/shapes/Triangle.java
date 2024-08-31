@@ -13,9 +13,9 @@ public class Triangle {
     }
 
     public void doubleSize() {
-        sides[0] *= Math.sqrt(2); 
-        sides[1] *= Math.sqrt(2);
-        sides[2] *= Math.sqrt(2);
+        for (int i=0; i< sides.length; i++) {
+            sides[i] *= Math.sqrt(2);
+        }
     }
 
     public double longestLineWithin() {
