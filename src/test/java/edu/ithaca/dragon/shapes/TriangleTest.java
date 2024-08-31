@@ -50,9 +50,7 @@ public class TriangleTest {
         Triangle myTriangle = new Triangle(3,4,5); 
         for (double side : myTriangle.getSides()) { 
             assertTrue(myTriangle.longestLineWithin() >= side);
-
         }
-
         myTriangle = new Triangle(1,1,1); 
         for (double side : myTriangle.getSides()) { 
             assertTrue(myTriangle.longestLineWithin() >= side);
