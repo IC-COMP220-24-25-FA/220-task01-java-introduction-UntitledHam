@@ -19,9 +19,9 @@ public class Triangle {
     }
 
     public double longestLineWithin() {
-        double[] sides_copy = sides.clone();
-        Arrays.sort(sides_copy); 
-        return sides_copy[2]; 
+        double[] sidesCopy = sides.clone();
+        Arrays.sort(sidesCopy); 
+        return sidesCopy[2]; 
     }
 
     public double calcHeight() {
