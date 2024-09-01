@@ -22,5 +22,9 @@ public class Rectangle {
     public double longestLineWithin(){
         return Math.sqrt(Math.pow(length, 2) + Math.pow(width, 2));
     }
+
+    public String toString() {
+        return "Length: " + length + "\nWidth: " + width + "\nArea: " + calcArea() + "\nLongest Line within: " + longestLineWithin(); 
+    }
     
 }
