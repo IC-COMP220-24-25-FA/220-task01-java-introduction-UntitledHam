@@ -43,7 +43,17 @@ public class FunctionPractice {
         in the past 3 days, they are good */
         // Not grabbed the paper today but have not chewed shoes in past week, true.
         // else False
-        throw new RuntimeException("Not Implemented");
+        if (daysSinceShoesChewed < yearsOld * 365) {
+            throw new IllegalArgumentException("daysSinceShoesChewed cannot be longer than the dogs age.");
+        }
+        else if (daysSinceShoesChewed > 3 && fetchedThePaperToday){
+            return true;
+        }
+        else if (daysSinceShoesChewed > 7) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
