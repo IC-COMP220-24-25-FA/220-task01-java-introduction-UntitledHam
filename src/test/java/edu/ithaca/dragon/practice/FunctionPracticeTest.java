@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.engine.support.descriptor.AbstractTestDescriptor;
 
 import java.util.ArrayList;
+import java.util.function.Function;
 
 public class FunctionPracticeTest {
 
@@ -42,6 +43,8 @@ public class FunctionPracticeTest {
         assertEquals(false, FunctionPractice.isGoodDog(2, 0, false));
         assertEquals(false, FunctionPractice.isGoodDog(2, 2, true));
         assertEquals(false, FunctionPractice.isGoodDog(2, 6, false));
+
+        assertThrows(IllegalArgumentException.class, () -> FunctionPractice.isGoodDog(1, 1000, false));
     }
 
     @Test
@@ -52,7 +55,7 @@ public class FunctionPracticeTest {
         nums.add(5); 
         nums.add(3); 
         nums.add(70);
-        assertEquals(FunctionPractice.findFirstLargest(nums), 1);
+        assertEquals(1,FunctionPractice.findFirstLargest(nums));
 
         nums = new ArrayList<Integer>();
         nums.add(2);
@@ -60,10 +63,10 @@ public class FunctionPracticeTest {
         nums.add(5); 
         nums.add(1);
         nums.add(5);
-        assertEquals(FunctionPractice.findFirstLargest(nums), 2);
+        assertEquals(2,FunctionPractice.findFirstLargest(nums));
 
         nums = new ArrayList<Integer>();
-        assertEquals(nums, -1);
+        assertEquals(-1, FunctionPractice.findFirstLargest(nums));
 
     }
 
@@ -75,7 +78,7 @@ public class FunctionPracticeTest {
         nums.add(5); 
         nums.add(3); 
         nums.add(70);
-        assertEquals(FunctionPractice.findFirstLargest(nums), 4);
+        assertEquals(4, FunctionPractice.findLastLargest(nums));
 
         nums = new ArrayList<Integer>();
         nums.add(2);
@@ -85,10 +88,10 @@ public class FunctionPracticeTest {
         nums.add(3);
         nums.add(5);
         nums.add(2);
-        assertEquals(FunctionPractice.findFirstLargest(nums), 5);
+        assertEquals(5,FunctionPractice.findLastLargest(nums));
 
         nums = new ArrayList<Integer>();
-        assertEquals(nums, -1);
+        assertEquals(-1, FunctionPractice.findLastLargest(nums));
 
     }
 
@@ -101,8 +104,8 @@ public class FunctionPracticeTest {
         words.add("Is");
         words.add("A");
         words.add("Test");
-        assertEquals(FunctionPractice.findFirstMostOccurencesOfLetter(words, 'l'), "Hello");
-        assertEquals(FunctionPractice.findFirstMostOccurencesOfLetter(words, 's'), "This");
+        assertEquals("Hello",FunctionPractice.findFirstMostOccurencesOfLetter(words, 'l'));
+        assertEquals("This",FunctionPractice.findFirstMostOccurencesOfLetter(words, 's'));
 
         words = new ArrayList<String>();
         words.add("Never");
@@ -116,7 +119,7 @@ public class FunctionPracticeTest {
         words.add("You");
         words.add("Down");
 
-        assertEquals(FunctionPractice.findFirstMostOccurencesOfLetter(words, 'n'), "Gonna");
+        assertEquals("Gonna", FunctionPractice.findFirstMostOccurencesOfLetter(words, 'n'));
     }
     
 }

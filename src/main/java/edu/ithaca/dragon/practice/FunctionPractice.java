@@ -43,7 +43,7 @@ public class FunctionPractice {
         in the past 3 days, they are good */
         // Not grabbed the paper today but have not chewed shoes in past week, true.
         // else False
-        if (daysSinceShoesChewed < yearsOld * 365) {
+        if (daysSinceShoesChewed > (yearsOld * 365)) {
             throw new IllegalArgumentException("daysSinceShoesChewed cannot be longer than the dogs age.");
         }
         else if (daysSinceShoesChewed > 3 && fetchedThePaperToday){
@@ -79,7 +79,7 @@ public class FunctionPractice {
     public static int findLastLargest(List<Integer> numbers){
         int index = -1; 
         int largestNumber = Integer.MIN_VALUE;
-        for (int i=numbers.size(); i >= 0; i--) {
+        for (int i=numbers.size()-1; i >= 0; i--) {
             if (numbers.get(i) > largestNumber) {
                 largestNumber = numbers.get(i); 
                 index = i;
@@ -109,6 +109,9 @@ public class FunctionPractice {
                 word = words.get(i);
                 largestOccurences = occurences;
             }
+        }
+        if (largestOccurences == 0) {
+            throw new IllegalArgumentException("Letter not found.");
         }
         return word;
     }
