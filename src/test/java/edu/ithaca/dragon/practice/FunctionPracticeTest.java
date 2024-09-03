@@ -12,6 +12,7 @@ public class FunctionPracticeTest {
 
     @Test
     public void largestOfThreeTest(){
+        // This test is important because it shows if the largestOfThere() function actually returns the largest of three. 
         assertEquals(5, FunctionPractice.largestOfThree(4, 5, 2));
         assertEquals(5, FunctionPractice.largestOfThree(5, 4, 2));
         assertEquals(5, FunctionPractice.largestOfThree(4, 2, 5));

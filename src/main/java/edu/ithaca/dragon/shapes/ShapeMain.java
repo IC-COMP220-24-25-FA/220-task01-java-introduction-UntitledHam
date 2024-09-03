@@ -1,5 +1,6 @@
 package edu.ithaca.dragon.shapes;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ShapeMain {
@@ -14,7 +15,7 @@ public class ShapeMain {
             for (int i=0; i< rectangles.length; i++) { 
                 System.out.println("Rectangle: " + (i+1) + "\n" + rectangles[i] + "\n");
             }
-            System.out.print("Select a rectangle (type \"-1\" to exit): ");
+            System.out.print("Select a rectangle (type \"-1\" to exit): ");;
             int input = scanner.nextInt(); 
             if (input == -1) {
                 break; 
