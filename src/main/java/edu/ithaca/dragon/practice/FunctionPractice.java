@@ -62,10 +62,10 @@ public class FunctionPractice {
      */
     public static int findFirstLargest(List<Integer> numbers){
         int index = -1;
-        int largest_number = Integer.MIN_VALUE; 
+        int largestNumber = Integer.MIN_VALUE; 
         for (int i=0; i < numbers.size(); i++) {
-            if (numbers.get(i) > largest_number) {
-                largest_number = numbers.get(i); 
+            if (numbers.get(i) > largestNumber) {
+                largestNumber = numbers.get(i); 
                 index = i;
             }
         }
@@ -77,7 +77,16 @@ public class FunctionPractice {
      * If the largest number occurs more than once, return the index of the last occurence.
      */
     public static int findLastLargest(List<Integer> numbers){
-        throw new RuntimeException("Not Implemented");
+        int index = -1; 
+        int largestNumber = Integer.MIN_VALUE;
+        for (int i=numbers.size(); i >= 0; i--) {
+            if (numbers.get(i) > largestNumber) {
+                largestNumber = numbers.get(i); 
+                index = i;
+            }
+        }
+        return index;
+        
     }
 
     /**
@@ -85,7 +94,23 @@ public class FunctionPractice {
      * @throws 
      */
     public static String findFirstMostOccurencesOfLetter(List<String> words, char letter){
-        throw new RuntimeException("Not Implemented");
+        String word = ""; 
+        int largestOccurences = 0;
+        for (int i=0; i < words.size(); i++) {
+            int occurences = 0;
+
+            for (int j=0; j<words.get(i).length(); j++){
+                if (words.get(i).charAt(j) == letter) {
+                    occurences++;
+                }
+            }
+
+            if (occurences > largestOccurences) {
+                word = words.get(i);
+                largestOccurences = occurences;
+            }
+        }
+        return word;
     }
 
 
