@@ -2,6 +2,9 @@ package edu.ithaca.dragon.practice;
 
 import java.util.List;
 import java.util.Arrays;
+import java.math.RoundingMode;
+import java.math.BigDecimal;
+
 
 public class FunctionPractice {
 
@@ -24,7 +27,11 @@ public class FunctionPractice {
      * @return the final price at register of the given item after discount and tax applied
      */
     public static double calcSalePrice(double originalPrice, double discountPercent, double salesTax){
-        return originalPrice - (originalPrice * (discountPercent/100)) + (originalPrice * (salesTax/100));
+        originalPrice = originalPrice - (originalPrice * (discountPercent/100));
+        originalPrice += (originalPrice * salesTax/100);
+        BigDecimal roundedPrice = new BigDecimal(originalPrice);
+        return roundedPrice.setScale(2,RoundingMode.HALF_UP).doubleValue();
+        
     }
 
     /**
