@@ -36,4 +36,9 @@ public class Triangle implements Shape {
     public double[] getSides() {
         return sides; 
     }
+
+    @Override
+    public String toString() {
+        return "Triangle:\nSides: (" + sides[0] +", "+ sides[1] + ", " + sides[2] + ")\nLongest line within: " + longestLineWithin() +"\nArea: " + calcArea();
+    }
 }

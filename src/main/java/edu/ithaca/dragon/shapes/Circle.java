@@ -30,4 +30,9 @@ public class Circle implements Shape {
     public double longestLineWithin(){
         return (double)radius * 2;
     }
+
+    @Override
+    public String toString() {
+        return "Circle:\nRadius: " + radius +"\nLongest Line Within: " + longestLineWithin() + "Area: " + calcArea();
+    }
 }

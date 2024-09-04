@@ -23,8 +23,9 @@ public class Rectangle implements Shape{
         return Math.sqrt(Math.pow(length, 2) + Math.pow(width, 2));
     }
 
+    @Override
     public String toString() {
-        return "Length: " + length + "\nWidth: " + width + "\nArea: " + calcArea() + "\nLongest Line within: " + longestLineWithin(); 
+        return "Rectangle: ("+length+","+width+")"+"\nLongest line within: " + longestLineWithin() + "\nArea: " + calcArea(); 
     }
     
 }
