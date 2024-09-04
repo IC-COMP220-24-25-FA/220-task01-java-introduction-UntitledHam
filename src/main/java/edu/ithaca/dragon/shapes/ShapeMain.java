@@ -2,6 +2,8 @@ package edu.ithaca.dragon.shapes;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ShapeMain {
     
@@ -36,12 +38,27 @@ public class ShapeMain {
     public static int randInt(int min, int max) {
         return (int)(Math.random() * (max - min +1)) + min; 
     }
-    public static Rectangle[] generateRectangles(int num) {
-        Rectangle[] rectangles = new Rectangle[num]; 
-        for (int i = 0; i < rectangles.length; i++) {
-            rectangles[i] = new Rectangle((double) randInt(1, 50), (double) randInt(1, 50));
-        }
 
-        return rectangles; 
+    public static List<Shape> generateShapes(int numShapes) {
+        List<Shape> shapes = new ArrayList<>();
+        for (int i=0; i < numShapes; i++) {
+            shapes.add(generateRandomShape());
+        }
+        return shapes;
+    }
+
+    public static Shape generateRandomShape() {
+        int num = randInt(1, 3);
+        switch (num) {
+            case 1: {
+                return new Circle((double)randInt(1, 100));
+            }
+            case 2: {
+                return new Rectangle((double)randInt(1, 100), (double) randInt(1, 100));
+            }
+            case 3: {
+                return new Triangle((double)randInt(1, 100), (double)randInt(1, 100), (double)randInt(1, 100));
+            }
+        }
     }
 } 
