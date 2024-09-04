@@ -11,22 +11,22 @@ public class ShapeMain {
         //Make a list of 5 randomly-sized rectangles and print their area and the largest line that can be drawn through them
         //Allow the user to choose one, double the size of that one, and print them all again
         //Use a loop to repeat the process 5 times
-        Rectangle[] rectangles = generateRectangles(5); 
+        List<Shape> shapes = new ArrayList<>(); 
         Scanner scanner = new Scanner(System.in);
-        for (int x=0; x < 5; x++) {
-            for (int i=0; i< rectangles.length; i++) { 
-                System.out.println("Rectangle: " + (i+1) + "\n" + rectangles[i] + "\n");
+        while (true) {
+            for (int i=0; i< shapes.size(); i++) { 
+                System.out.println("" + (i+1) + "\n" + shapes.get(i) + "\n");
             }
-            System.out.print("Select a rectangle (type \"-1\" to exit): ");;
+            System.out.print("Select a shape (type \"-1\" to exit): ");;
             int input = scanner.nextInt(); 
             if (input == -1) {
                 break; 
             }
-            else if (input >= rectangles.length || input < 0) {
+            else if (input >= shapes.size() || input < 0) {
                 System.out.print("Please input a valid rectangle.");
             }
             else {
-                rectangles[input].doubleSize();
+                shapes.get(input).doubleSize();
                 System.out.println("Doubled Rectangle: " + input +"'s size.\n");
             }
 
