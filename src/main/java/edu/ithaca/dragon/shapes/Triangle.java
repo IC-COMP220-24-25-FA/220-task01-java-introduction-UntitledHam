@@ -5,10 +5,8 @@ public class Triangle implements Shape {
     private double[] sides; 
     public Triangle(double side0, double side1, double side2){
         sides = new double[] {side0, side1, side2}; 
-        double[] sidesCopy = sides.clone();
-        Arrays.sort(sidesCopy); 
-        if (sidesCopy[2] > sidesCopy[1] + sidesCopy[0]) {
-            throw new IllegalArgumentException("Side values cannot make a triangle.");
+        if (sides[0] >= sides[1] + sides[2]) {
+            throw new IllegalArgumentException("Inputted side values cannot make a triangle.");
         }
     }
 

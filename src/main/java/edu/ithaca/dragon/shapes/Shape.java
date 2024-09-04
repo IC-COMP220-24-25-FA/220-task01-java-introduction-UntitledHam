@@ -7,7 +7,6 @@ public interface Shape {
 
     public double longestLineWithin(); 
 
-    @Override
     public String toString();
 }
 

@@ -25,7 +25,7 @@ public class Rectangle implements Shape{
 
     @Override
     public String toString() {
-        return "Rectangle: ("+length+","+width+")"+"\nLongest line within: " + longestLineWithin() + "\nArea: " + calcArea(); 
+        return "Rectangle:\nSides: ("+length+", "+width+")"+"\nLongest line within: " + longestLineWithin() + "\nArea: " + calcArea(); 
     }
     
 }
