@@ -57,8 +57,11 @@ public class ShapeMain {
                 return new Rectangle((double)randInt(1, 100), (double) randInt(1, 100));
             }
             case 3: {
-                return new Triangle((double)randInt(1, 100), (double)randInt(1, 100), (double)randInt(1, 100));
+                int firstSide = randInt(1, 100); int secondSide = randInt(1, 100);
+                int thirdSide = randInt(1, firstSide + secondSide -1);
+                return new Triangle((double)firstSide, (double) secondSide, (double) thirdSide);
             }
         }
+        return null;
     }
 } 
