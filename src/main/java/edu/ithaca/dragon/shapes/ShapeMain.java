@@ -42,25 +42,24 @@ public class ShapeMain {
     public static List<Shape> generateShapes(int numShapes) {
         List<Shape> shapes = new ArrayList<>();
         for (int i=0; i < numShapes; i++) {
-            shapes.add(generateRandomShape());
+            shapes.add(generateRandomShape(1,100));
         }
         return shapes;
     }
 
-    public static Shape generateRandomShape() {
-        int num = 3;
+    public static Shape generateRandomShape(int minLength, int maxLength) {
+        int num = randInt(1, 3);
         switch (num) {
             case 1: {
-                return new Circle((double)randInt(1, 100));
+                return new Circle((double)randInt(minLength, maxLength));
             }
             case 2: {
-                return new Rectangle((double)randInt(1, 100), (double) randInt(1, 100));
+                return new Rectangle((double)randInt(minLength, maxLength), (double) randInt(minLength, maxLength));
             }
             case 3: {
-                int firstSide = randInt(1, 100); int secondSide = randInt(1, firstSide -1);
-                int thirdSide = randInt(1 , secondSide -1);
-                System.out.println("Test: " + firstSide + ", " + secondSide + ", " + thirdSide);
-                return new Triangle((double)firstSide, (double) secondSide, (double) thirdSide);
+                int firstSide = randInt(minLength, maxLength); int secondSide = randInt(minLength, maxLength);
+                int thirdSide = randInt(Math.abs(firstSide - secondSide) +1, firstSide + secondSide -1);
+                return new Triangle(firstSide, secondSide, thirdSide);
             }
         }
         return null;
