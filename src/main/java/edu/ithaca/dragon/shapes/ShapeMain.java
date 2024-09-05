@@ -17,16 +17,26 @@ public class ShapeMain {
             for (int i=0; i< shapes.size(); i++) { 
                 System.out.println("" + (i+1) + "\n" + shapes.get(i) + "\n");
             }
-            System.out.print("Select a shape (type \"-1\" to exit): ");;
-            int input = scanner.nextInt(); 
-            if (input == -1) {
-                break; 
+            System.out.print("Select a shape (type \"exit\" to exit): ");;
+            String text_input = scanner.nextLine(); 
+            if (text_input.toLowerCase().equals("exit")){
+                break;
             }
-            else if (input >= shapes.size() || input < 0) {
+            int input = 0;
+            try {
+                input = Integer.parseInt(text_input);
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Please input a valid number.");
+                continue;
+            }
+            
+            if (input -1 >= shapes.size() || input < 0) {
                 System.out.print("Please input a valid rectangle.");
             }
             else {
-                shapes.get(input-1).doubleSize();
+                Shape theShape = shapes.get(input-1);
+                theShape.doubleSize();
                 System.out.println("Doubled Rectangle: " + input +"'s size.\n");
             }
 
