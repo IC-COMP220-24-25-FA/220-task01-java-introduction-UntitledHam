@@ -33,6 +33,6 @@ public class Circle implements Shape {
 
     @Override
     public String toString() {
-        return "Circle:\nRadius: " + radius +"\nLongest Line Within: " + longestLineWithin() + "Area: " + calcArea();
+        return "Circle:\nRadius: " + radius +"\nLongest Line Within: " + longestLineWithin() + "\nArea: " + calcArea();
     }
 }

@@ -26,7 +26,7 @@ public class ShapeMain {
                 System.out.print("Please input a valid rectangle.");
             }
             else {
-                shapes.get(input).doubleSize();
+                shapes.get(input-1).doubleSize();
                 System.out.println("Doubled Rectangle: " + input +"'s size.\n");
             }
 
@@ -48,7 +48,7 @@ public class ShapeMain {
     }
 
     public static Shape generateRandomShape() {
-        int num = randInt(1, 3);
+        int num = 3;
         switch (num) {
             case 1: {
                 return new Circle((double)randInt(1, 100));
@@ -57,11 +57,13 @@ public class ShapeMain {
                 return new Rectangle((double)randInt(1, 100), (double) randInt(1, 100));
             }
             case 3: {
-                int firstSide = randInt(1, 100); int secondSide = randInt(1, 100);
-                int thirdSide = randInt(1, firstSide + secondSide -1);
+                int firstSide = randInt(1, 100); int secondSide = randInt(1, firstSide -1);
+                int thirdSide = randInt(1 , secondSide -1);
+                System.out.println("Test: " + firstSide + ", " + secondSide + ", " + thirdSide);
                 return new Triangle((double)firstSide, (double) secondSide, (double) thirdSide);
             }
         }
         return null;
     }
+
 } 
