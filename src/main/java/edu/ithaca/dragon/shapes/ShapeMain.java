@@ -19,10 +19,10 @@ public class ShapeMain {
             }
             System.out.print("Select a shape (type \"exit\" to exit): ");;
             String text_input = scanner.nextLine(); 
+            int input = 0;
             if (text_input.toLowerCase().equals("exit")){
                 break;
             }
-            int input = 0;
             try {
                 input = Integer.parseInt(text_input);
             }
