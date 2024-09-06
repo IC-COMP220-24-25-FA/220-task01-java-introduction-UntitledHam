@@ -13,6 +13,9 @@ public class ShapeMain {
         //Use a loop to repeat the process 5 times
         List<Shape> shapes = generateShapes(10); 
         Scanner scanner = new Scanner(System.in);
+        for (int i=0; i< shapes.size(); i++) { 
+            System.out.println("" + (i+1) + "\n" + shapes.get(i) + "\n");
+        }
         System.out.println("Doubling the size of all shapes...");
         for (Shape shape : shapes) {
             shape.doubleSize();
